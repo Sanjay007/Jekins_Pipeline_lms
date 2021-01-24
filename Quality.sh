@@ -1,0 +1,1 @@
+echo "Quality-Gate Script Executed";
