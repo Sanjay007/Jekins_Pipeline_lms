@@ -1,0 +1,26 @@
+pipeline { 
+    agent any 
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'Build' 
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'Unit'
+                
+            }
+        }
+		stage('Quality') {
+            steps {
+                sh 'Quality'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'Deploy'
+            }
+        }
+    }
+}
