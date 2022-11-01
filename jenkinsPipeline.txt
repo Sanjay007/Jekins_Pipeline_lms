@@ -3,23 +3,23 @@ pipeline {
     stages {
         stage('Build') { 
             steps { 
-                sh 'Build' 
+                sh 'Build.sh' 
             }
         }
         stage('Test'){
             steps {
-                sh 'Unit'
+                sh 'Unit.sh'
                 
             }
         }
 		stage('Quality') {
             steps {
-                sh 'Quality'
+                sh 'Quality.sh'
             }
         }
         stage('Deploy') {
             steps {
-                sh 'Deploy'
+                sh 'Deploy.sh'
             }
         }
     }
