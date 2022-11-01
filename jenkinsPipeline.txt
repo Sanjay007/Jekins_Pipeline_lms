@@ -4,22 +4,25 @@ pipeline {
         stage('Build') { 
             steps { 
 				sh 'chmod -R 777 $WORKSPACE'
+				sh 'echo Build Stage'
                 sh '$WORKSPACE/Build.sh' 
             }
         }
         stage('Test'){
             steps {
+				sh 'echo Unit Test Stage'
                 sh '$WORKSPACE/Unit.sh'
-                
             }
         }
 		stage('Quality') {
             steps {
+				sh 'echo Quality Stage'
                 sh '$WORKSPACE/Quality.sh'
             }
         }
         stage('Deploy') {
             steps {
+				sh 'echo Deploy Stage'
                 sh '$WORKSPACE/Deploy.sh'
             }
         }
