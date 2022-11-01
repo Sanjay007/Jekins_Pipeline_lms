@@ -26,5 +26,11 @@ pipeline {
                 sh '$WORKSPACE/Deploy.sh'
             }
         }
+		stage('Release') {
+            steps {
+				sh 'echo Release Stage'
+                sh '$WORKSPACE/Release.sh'
+            }
+        }
     }
 }
