@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps { 
 				sh 'echo $WORKSPACE'
-				sh 'chmod +x -R ${env.WORKSPACE}'
+				sh 'chmod -R 777 $WORKSPACE'
                 sh '$WORKSPACE/Build.sh' 
             }
         }
